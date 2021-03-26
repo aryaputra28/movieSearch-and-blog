@@ -27,7 +27,7 @@ $(document).ready(function () {
 searchMovie = (search_value) => {
     $.ajax({
         type: "GET",
-        url: 'http://www.omdbapi.com/?apikey=55bd88dc&t=' + search_value,
+        url: 'https://www.omdbapi.com/?apikey=55bd88dc&t=' + search_value,
         data: "json",
         success: function (data) {
             $('#choosenMovie').empty()  
@@ -51,7 +51,7 @@ searchMovie = (search_value) => {
 function likedMovie(search_value) {
     $.ajax({
         type: "GET",
-        url: 'http://www.omdbapi.com/?apikey=55bd88dc&t=' + search_value,
+        url: 'https://www.omdbapi.com/?apikey=55bd88dc&t=' + search_value,
         data: "json",
         success: function (data) {
             likes.set(data.Title, data);
@@ -63,7 +63,7 @@ function likedMovie(search_value) {
 function bookedMovie(search_value) {
     $.ajax({
         type: "GET",
-        url: 'http://www.omdbapi.com/?apikey=55bd88dc&t=' + search_value,
+        url: 'https://www.omdbapi.com/?apikey=55bd88dc&t=' + search_value,
         data: "json",
         success: function (data) {
             bookmarked.set(data.Title, data);
