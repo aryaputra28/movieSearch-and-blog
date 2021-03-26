@@ -1,0 +1,59 @@
+.container-fluid {
+    padding: 3% 15% 7%;
+}
+
+.navbar {
+    padding:0 0 5rem;
+}
+/* .nav-item {
+    background-color: black;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 1.3rem;
+    padding-left: 30px;
+    padding-right: 30px;
+} */
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+body {
+    font-family: 'Montserrat';
+}
+  
+/* navbar  */
+
+
+.title {
+    background-color: #00356B;
+}
+
+.isi-title {
+    text-align: center;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
+.title-image {
+    width: 80%;
+    transform: rotate(25deg);
+    position: absolute;
+    right: 20%;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+.label {
+    font-family: 'Montserrat', sans-serif;
+    color: #00356B;
+}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+{% endblock meta %}
+
+
+{% block content %}
+    <div class="container-fluid title">
+        <div class="isi-title" >
+            <h1 class="pertama">Save Your Favorite Movie 💖</h1>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-top: 20px;">
+        <div>
+            <h2 class="label"><b>Search Movie</b></h2>
+            <input type="text" id="searchArea" name="fname" placeholder="Movie Title"><br>
+            <button style="text-align: right;" type="button" class="searchButton btn btn-dark">Search</button>
+            <div class="searching" style="margin-top: 30px; ">
+                <h2 class="label"><b>Your Search</b></h2>
+                <section id="choosenMovie" style="margin-left: auto; margin-right: auto; ">
+                </section>
+                <div class="tombol" style="margin-top: 10px;">
+                    <button type="button" class="likedButton btn btn-danger">Like</button>
+                    <button type="button" class="bookmarkButton btn btn-info">Bookmark</button>
+                </div>
+            </div>
+
+            <div class="Disukai" style="margin-top: 30px;">
+                <h2 class="label"><b>Your Likes</b></h2>
+                <section>
+                    <div class="row likesClass">
+                    </div>
+                </section>
+            </div>
+            
+            <div class="Dibookmark" style="margin-top: 30px;">
+                <h2 class="label"><b>Your Bookmarks</b></h2>
+                <section >
+                    <div class="row bookmarksClass">
+                    </div>
+                </section>
+            </div>
+            <section id="popularMovies">
+            </section>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+{% endblock content %}
