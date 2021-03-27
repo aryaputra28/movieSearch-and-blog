@@ -34,7 +34,7 @@ def blogCreator(request):
     if request.method == 'POST':
         blog_form = BlogForm(request.POST)
         if blog_form.is_valid():
-            blog_form.save()
+            # blog_form.save()
             blog_model.create(
                 judulBlog = blog_form.cleaned_data.get('judulBlog'),
                 isiBlog = blog_form.cleaned_data.get('isiBlog'),
