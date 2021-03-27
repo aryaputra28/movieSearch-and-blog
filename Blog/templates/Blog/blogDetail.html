@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <h2 style="text-align: center; color: #00356B;" class="featurette-heading"><b>Blogs Detail</b></h2>
+        <table class="table" style="text-align: left;" >
+        <tbody >
+          <tr>
+            <th scope="row">Judul</th>
+            <td>{{ blog.judulBlog }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Isi Blog</th>
+            <td>{{ blog.isiBlog|slice:"0:500" }}...</td>
+          </tr>
+        </tbody>
+      </table>
+      <a button type="button" class="btn btn-outline-primary" href="{% url 'Blog:Blog_update' blog.id %}">Update Course</a>
+      <a class="btn btn-danger" href="{% url 'Blog:Blog_delete' blog.id %}">Delete Course</a>
+      <a type="button" class="btn btn-light" href="{% url 'Blog:index' %}"><b>Back</b></a>
+  </div>
+</div>
+</div>
+
+
+{% endblock content %}

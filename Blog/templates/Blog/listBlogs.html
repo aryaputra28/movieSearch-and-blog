@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <h2 style="text-align: center; color: #00356B;"><b>Blogs From Others</b></h2>
+    {% for i in all %}
+    <div class="col d-flex justify-content-center">
+        <div class="card mb-3" style="max-width: 100rem;">
+            <div class="card-header">Oleh : {{i.akun}}</div>
+            <div class="card-body">
+                <h5 class="card-title">{{i.judulBlog}}</h5>
+                <p class="card-text">{{i.isiBlog|slice:"0:500"}}...</p>
+            </div>
+      </div>    
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}

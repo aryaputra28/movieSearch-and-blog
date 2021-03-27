@@ -24,17 +24,35 @@
     
     <div class="container-fluid title">
       <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="" >MOVIE</a>
+        <a class="navbar-brand" href="/" >RISTEK</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                  <a href="#footer" class="nav-link">Movie</a>
-              </li>
+            <li class="nav-item">
+              <a style="color: white; " class="nav-link" href="{% url 'Blog:allBlogs' %}">Blog</a></li>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a style="color: white; " class="nav-link" href="{% url 'Blog:index' %}">Hello, {{ request.user }}</a></li>
+            </li>
+            <!-- Log out  -->
+            <li class="nav-item">
+              <a style="color: white; font-weight: bold" class="nav-link" href="{% url 'Blog:logout' %}">Logout</a></li>
+            </li>
+            {% else %}
+            <!-- Login -->
+            <li class="nav-item">
+              <a style="color: white" class="nav-link" href="{% url 'Blog:login' %}">Login</a></li>
+            </li>
+            <!-- Register -->
+            <li class="nav-item">
+              <a style="color: white;" class="nav-link" href="{% url 'Blog:signup' %}">Register</a></li>
+            </li>
+            {% endif %}
           </ul>
-        </div> -->
+        </div>
       </nav>
     </div>
     {% block meta %}
