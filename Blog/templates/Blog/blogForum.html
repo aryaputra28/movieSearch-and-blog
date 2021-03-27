@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block meta %}
+{% endblock meta %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class = "row">
+            <div class="col d-flex justify-content-center">
+                <h2 style="text-align: center; font-weight: bolder; color: white; font-size: larger;">Blog Creator</h2>
+                    <form class="align-self-center" method="POST" >
+                       {% csrf_token %}
+                        {{ blog_form|crispy }}
+                        <input type="hidden" name="next" value="{{ request.GET.next }}">
+                        <button type="submit" class="btn" style="background-color: #2C175D; color: white;" ><b>Submit</b></button>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+
+{% endblock content %}

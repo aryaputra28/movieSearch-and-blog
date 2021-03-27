@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <h1 style="text-align: center; color: #00356B;"><b>List of Your Blogs</b></h1>
+    <div style="text-align: right; margin-bottom: 20px;">
+        <a class="btn btn-primary" href="{% url 'Blog:blogCreator' %}" role="button">Create New!</a>
+    </div>
+    {% for i in ownBlog %}
+    {% if i.akun == user %}
+    <!-- <h1>{{i}}</h1> -->
+    <div class="col d-flex justify-content-center">
+        <div class="card mb-3" style="max-width: 100rem;">
+            <div class="card-header">
+                <a href="{{i.id}}">Oleh : {{i.akun}} </a> 
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{i.judulBlog}}</h5>
+                <p class="card-text">{{i.isiBlog|slice:"0:500"}}...</p>
+            </div>
+      </div>    
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+
+
+{% endblock content %}

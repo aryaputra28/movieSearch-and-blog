@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <h2 class="featurette-heading"><b>Delete Blog</b></h2>
+        <hr class="mt-0 mb-4">
+        
+        <form action="{% url 'Blog:Blog_delete' item.id %}" method='POST'>
+            {% csrf_token %}
+            <h5 class="featurette-heading">Do you want to delete the course "{{item}}"?</h5>
+            <br>
+            <button type="submit" class="btn btn-danger"><b>Yes</b></button>
+            <a type="button" class="btn btn-info" href="{% url 'Blog:index' %}"><b>Cancel</b></a>
+
+      </div>
+    </div>
+  </div>
+<br>
+
+
+
+{% endblock content %}
